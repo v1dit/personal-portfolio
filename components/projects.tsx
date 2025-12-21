@@ -11,6 +11,7 @@ const projects = [
       "Decentralized sports betting portfolio with ML predictions (~83% accuracy) and on-chain auditability for transparent wagering.",
     tags: ["Blockchain", "Machine Learning", "Solidity", "Python"],
     gradient: "from-green-500/20 to-blue-500/20",
+    githubUrl: "https://github.com/v1dit/sportsbet-portfolio",
   },
   {
     title: "ArtiFACT",
@@ -18,6 +19,7 @@ const projects = [
       "AI-driven media authenticity engine using ConvNeXt-V2, EfficientNet-V2, CLIP, and multimodal ML for detecting synthetic media.",
     tags: ["PyTorch", "CLIP", "ConvNeXt-V2", "Computer Vision"],
     gradient: "from-purple-500/20 to-pink-500/20",
+    githubUrl: "https://github.com/ArtiFACT-CalHacks/artifact",
   },
   {
     title: "Voyagent",
@@ -25,6 +27,7 @@ const projects = [
       "LLM-powered travel planner using FastAPI, React, and real-time APIs for personalized itinerary generation.",
     tags: ["FastAPI", "React", "LLM", "REST APIs"],
     gradient: "from-cyan-500/20 to-blue-500/20",
+    githubUrl: "https://github.com/abhinavala/Voyagent",
   },
   {
     title: "Ember Alert",
@@ -32,6 +35,7 @@ const projects = [
       "Rapid emergency response system for wildfire detection and notification using real-time satellite data and ML.",
     tags: ["Machine Learning", "Emergency Response", "Python", "Real-time"],
     gradient: "from-orange-500/20 to-red-500/20",
+    githubUrl: "https://github.com/AbeBhatti/hackforhumanity",
   },
   {
     title: "DriveWatch AI",
@@ -39,6 +43,7 @@ const projects = [
       "AWS x Inrix finalist project for real-time Amber Alert vehicle detection using computer vision and edge computing.",
     tags: ["AWS", "Computer Vision", "Edge AI", "Real-time"],
     gradient: "from-yellow-500/20 to-orange-500/20",
+    githubUrl: "https://github.com/v1dit/AWS2024",
   },
   {
     title: "Open Spaces AI",
@@ -46,6 +51,7 @@ const projects = [
       "AI-powered platform for discovering and analyzing public spaces, leveraging computer vision and geospatial data.",
     tags: ["AI", "Geospatial", "Computer Vision", "Python"],
     gradient: "from-teal-500/20 to-green-500/20",
+    githubUrl: "https://github.com/OpenSpacesProject",
   },
   {
     title: "IP Rights & Market Value Analysis",
@@ -118,10 +124,14 @@ export default function Projects() {
                 ))}
               </div>
 
-              <Button variant="ghost" size="sm" className="group-hover:translate-x-1 transition-transform">
-                View on GitHub
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="sm" className="group-hover:translate-x-1 transition-transform">
+                    View on GitHub
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              )}
             </div>
           ))}
         </div>

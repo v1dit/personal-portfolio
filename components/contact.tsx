@@ -15,6 +15,8 @@ export default function Contact() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,10 +38,32 @@ export default function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Error sending message:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -55,7 +79,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="animate-on-scroll opacity-0" style={{ animationDelay: "100ms" }}>
-            <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-gray-800/80 h-full">
+            <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-xl border-2 border-gray-800 h-full">
               <h4 className="text-2xl font-bold text-gray-900 mb-8">{"Let's connect"}</h4>
 
               <div className="space-y-6">
@@ -100,6 +124,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-white/50 border-gray-200/50"
+                    required
                   />
                 </div>
 
@@ -114,6 +139,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-white/50 border-gray-200/50"
+                    required
                   />
                 </div>
 
@@ -128,13 +154,21 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="bg-white/50 border-gray-200/50 resize-none"
+                    required
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+
+                {submitStatus === "success" && (
+                  <p className="text-sm text-green-600 text-center">Message sent successfully!</p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-sm text-red-600 text-center">Failed to send message. Please try again.</p>
+                )}
               </div>
             </form>
           </div>

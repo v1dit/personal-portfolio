@@ -63,7 +63,7 @@ export default function About() {
 
           <div className="flex justify-center gap-4">
             <a
-              href="https://github.com/vidit"
+              href="https://github.com/v1dit"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 p-[2px] hover:shadow-lg transition-all duration-300 hover:scale-105"
@@ -73,7 +73,7 @@ export default function About() {
               </div>
             </a>
             <a
-              href="https://linkedin.com/in/vidit-agarwal"
+              href="https://www.linkedin.com/in/viditagarwal-"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 p-[2px] hover:shadow-lg transition-all duration-300 hover:scale-105"

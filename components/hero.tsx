@@ -34,6 +34,16 @@ export default function Hero() {
     }
   }
 
+  const handleResumeDownload = () => {
+    // Create a link element and trigger download
+    const link = document.createElement("a")
+    link.href = "/resume.pdf"
+    link.download = "Vidit_Agarwal_Resume.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="home" ref={heroRef} className="min-h-screen flex items-center justify-center px-6 pt-20 opacity-0">
       <div className="max-w-4xl mx-auto text-center">
@@ -68,7 +78,12 @@ export default function Hero() {
             View My Work
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button variant="outline" size="lg" className="text-base px-8 py-6 bg-transparent">
+          <Button
+            onClick={handleResumeDownload}
+            variant="outline"
+            size="lg"
+            className="text-base px-8 py-6 bg-transparent"
+          >
             <Download className="mr-2 h-4 w-4" />
             Download Resume
           </Button>

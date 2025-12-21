@@ -4,10 +4,6 @@ import { useEffect, useRef } from "react"
 
 const skillCategories = [
   {
-    title: "Languages",
-    skills: ["Python", "Java", "C++", "JavaScript", "SQL", "Solidity"],
-  },
-  {
     title: "Frameworks & Tools",
     skills: ["React.js", "FastAPI", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "Git/GitHub"],
   },
@@ -86,6 +82,40 @@ export default function Skills() {
           </h3>
         </div>
 
+        <div className="mb-6">
+          <div className="animate-on-scroll opacity-0 p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-gray-200/50 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6">Languages</h4>
+            <div className="space-y-6">
+              <div>
+                <p className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">Programming</p>
+                <div className="flex flex-wrap gap-2">
+                  {programmingLanguages.map((language, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 text-sm rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-gray-800 border border-gray-200/50"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wide">Spoken</p>
+                <div className="flex flex-wrap gap-2">
+                  {spokenLanguages.map((language, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 text-sm rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-gray-800 border border-gray-200/50"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           {skillCategories.map((category, index) => (
             <div
@@ -108,7 +138,7 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-1 gap-6">
           <div
             className="animate-on-scroll opacity-0 p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-gray-200/50 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg"
             style={{ animationDelay: "600ms" }}
@@ -122,41 +152,6 @@ export default function Skills() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div
-            className="animate-on-scroll opacity-0 p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-gray-200/50 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg"
-            style={{ animationDelay: "700ms" }}
-          >
-            <h4 className="text-lg font-bold text-gray-900 mb-4">Languages</h4>
-            <div className="space-y-4">
-              <div>
-                <p className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">Programming</p>
-                <div className="flex flex-wrap gap-2">
-                  {programmingLanguages.map((language, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1.5 text-sm rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-gray-800 border border-gray-200/50"
-                    >
-                      {language}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">Spoken</p>
-                <div className="flex flex-wrap gap-2">
-                  {spokenLanguages.map((language, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1.5 text-sm rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-gray-800 border border-gray-200/50"
-                    >
-                      {language}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
