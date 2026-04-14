@@ -31,7 +31,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="leading-none text-gray-900">
-            <span className="block text-lg font-semibold tracking-[0.18em] uppercase">Vidit</span>
+            <span className="block text-lg font-semibold tracking-[0.14em] uppercase font-outfit">Vidit</span>
             <span className="block text-[11px] uppercase tracking-[0.26em] text-gray-400">Portfolio</span>
           </Link>
 
