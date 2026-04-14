@@ -103,7 +103,7 @@ export default function About() {
           </div>
 
           <div className="animate-on-scroll opacity-0 rounded-[2rem] border border-gray-200 bg-white/90 p-8 shadow-[0_22px_60px_-36px_rgba(15,23,42,0.35)]">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gray-400 mb-4">Snapshot</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gray-400 mb-4">At a glance</p>
             <div className="space-y-6 text-left">
               <div>
                 <p className="text-sm text-gray-500 mb-1">School</p>
