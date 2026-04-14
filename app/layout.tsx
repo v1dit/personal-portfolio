@@ -1,16 +1,24 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Cormorant_Garamond, Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+})
 
 export const metadata: Metadata = {
-  title: "Vidit Agarwal - AI & Full-Stack Developer",
+  title: "Vidit Agarwal | AI, Systems, and Full-Stack Builder",
   description:
-    "Computer Science & Economics student at Santa Clara University building AI, ML, and full-stack systems. Portfolio showcasing blockchain, machine learning, and research projects.",
+    "Personal portfolio and resume site for Vidit Agarwal, a Santa Clara University student building across AI, systems, blockchain, startups, and full-stack engineering.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -38,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${manrope.variable} ${cormorant.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
