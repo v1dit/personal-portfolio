@@ -73,13 +73,13 @@ export default function Contact() {
           <h2 className="text-sm font-semibold text-blue-600 mb-4 tracking-wide uppercase">Contact</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance">Get in touch</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty leading-relaxed">
-            Looking for internship opportunities, research collaborations, or exciting projects.
+            Open to internships, startup opportunities, research collaborations, and ambitious product work.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="animate-on-scroll opacity-0" style={{ animationDelay: "100ms" }}>
-            <div className="p-8 rounded-3xl bg-white/60 backdrop-blur-xl border-2 border-gray-800 h-full">
+            <div className="p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-gray-200 shadow-[0_22px_60px_-38px_rgba(15,23,42,0.32)] h-full">
               <h4 className="text-2xl font-bold text-gray-900 mb-8">{"Let's connect"}</h4>
 
               <div className="space-y-6">
@@ -89,8 +89,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:vagarwal@scu.edu" className="text-gray-600 hover:text-blue-600 transition-colors">
-                      vagarwal@scu.edu
+                    <a href="mailto:vidit3035@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      vidit3035@gmail.com
                     </a>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
           <div className="animate-on-scroll opacity-0" style={{ animationDelay: "200ms" }}>
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-gray-200/50"
+              className="p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-gray-200 shadow-[0_22px_60px_-38px_rgba(15,23,42,0.24)]"
             >
               <div className="space-y-6">
                 <div>
