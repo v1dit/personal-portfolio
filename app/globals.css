@@ -75,7 +75,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -146,9 +146,10 @@
 
   h1,
   h2,
-  h3 {
-    font-family: var(--font-sans);
-    letter-spacing: -0.035em;
+  h3,
+  h4 {
+    font-family: var(--font-outfit), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.045em;
   }
 
   ::selection {
@@ -171,4 +172,8 @@
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility font-outfit {
+  font-family: var(--font-outfit), var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
