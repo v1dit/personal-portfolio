@@ -4,6 +4,13 @@ import { useEffect, useRef } from "react"
 
 const experiences = [
   {
+    title: "Open Source Systems Engineering",
+    company: "The Linux Foundation",
+    period: "Jan 2026 - Present",
+    description: "Contributing to open-source systems engineering work with a focus on Magma Core.",
+    current: true,
+  },
+  {
     title: "Blockchain Developer (Return Offer)",
     company: "Unicage",
     period: "Aug 2025 - Present",
@@ -87,45 +94,37 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-on-scroll opacity-0">
           <h2 className="text-sm font-semibold text-blue-600 mb-4 tracking-wide uppercase">Experience</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance">{"Where I've worked"}</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-balance">Where I&apos;ve worked</h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty leading-relaxed">
+            Research, internships, open-source systems, and founder-led product work across software and AI.
+          </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/20 via-purple-500/20 to-transparent md:-translate-x-1/2" />
+        <div className="space-y-5">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="animate-on-scroll opacity-0 rounded-[2rem] border border-gray-200 bg-white/85 p-6 shadow-[0_22px_60px_-38px_rgba(15,23,42,0.32)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_70px_-40px_rgba(15,23,42,0.32)]"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="grid gap-5 md:grid-cols-[180px_1fr] md:gap-8">
+                <div className="border-b border-gray-100 pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-8">
+                  <div className="text-sm font-semibold text-blue-600">{exp.period}</div>
+                  {exp.current && (
+                    <span className="mt-3 inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-700">
+                      Current
+                    </span>
+                  )}
+                </div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`animate-on-scroll opacity-0 relative ${
-                  index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:text-right"
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="ml-8 md:ml-0 md:mx-8">
-                  {/* Timeline dot */}
-                  <div
-                    className={`absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 md:-translate-x-1/2 ${
-                      exp.current ? "ring-4 ring-blue-500/20" : ""
-                    }`}
-                  />
-
-                  <div className="cursor-hover p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-gray-200/50 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg">
-                    {exp.current && (
-                      <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white mb-3">
-                        Current
-                      </span>
-                    )}
-                    <div className="text-sm text-blue-600 font-medium mb-1">{exp.period}</div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-1">{exp.title}</h4>
-                    <div className="text-base font-medium text-gray-700 mb-3">{exp.company}</div>
-                    <p className="text-sm text-gray-600 leading-relaxed">{exp.description}</p>
-                  </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-1">{exp.title}</h4>
+                  <div className="text-base font-medium text-gray-700 mb-3">{exp.company}</div>
+                  <p className="text-sm text-gray-600 leading-relaxed">{exp.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
