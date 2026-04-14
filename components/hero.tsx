@@ -106,10 +106,6 @@ export default function Hero() {
             Download Resume
           </Button>
         </div>
-
-        <p className="mt-8 text-sm text-gray-500">
-          Long-term goal: build something ambitious enough to earn a place in YC.
-        </p>
       </div>
     </section>
   )
